@@ -68,7 +68,7 @@
         <li class="menu-item">
             <a href="/company" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Analytics">General Settings</div>
+                <div data-i18n="Analytics">Company</div>
             </a>
         </li>
 
