@@ -28,7 +28,7 @@
                                         @method('Delete')
                                         <a href="/semester/{{ $semester->id }}/edit"><span
                                             class="badge rounded-pill bg-primary">Edit</span></a>
-                                        <span class="badge rounded-pill bg-danger show_confirm">Delete</span>
+                                        <a href ="/semester" disabled class="show_confirm text-decoration-none"><span class="badge rounded-pill bg-danger ">Delete</span></a>
                                     </form>
                                 </td>
                             </tr>

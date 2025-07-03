@@ -13,7 +13,7 @@
                         <h5 class="mb-0">Edit category Details</h5>
                     </div>
                     <div class="card-body">
-                        <form action ="/category/{{ $category->id }}" method="post" enctype="multipart/form-data">
+                        <form action ="/category/{{ $category->id }}" method="post">
                             @csrf
                             @method("Put")
                             <div class="mb-3">
@@ -32,7 +32,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
                 </div>
