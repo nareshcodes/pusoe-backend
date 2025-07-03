@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
-
+use  illuminate\support\Str;
 class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
+    {   $categories = Category::all();
+        return view("admin.category.index",compact("categories"));
     }
 
     /**
@@ -20,7 +21,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.category.create");
     }
 
     /**
@@ -28,7 +29,20 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $request->validate(
+            [
+                "name" => "required|unique:categories,name",
+            ],
+            [
+                "name.required" => "Category Name is required field",
+                "unique"=> "Category Already exists."
+        ],
+        );
+        $category = new Category();
+        $category->name = $request->name;
+        $category->slug = Str::slug($request->name,"-");
+        $category->save();
+        return back();
     }
 
     /**

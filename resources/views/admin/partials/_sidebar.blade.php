@@ -64,48 +64,42 @@
             </a>
         </li>
 
-        <!-- Company Settings -->
-        <li class="menu-item">
-            <a href="/company" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-user"></i>
-                <div data-i18n="Analytics">Company</div>
-            </a>
-        </li>
+        <!-- General Settings -->
+       <li class="menu-item" style="">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">General Settings</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="/company" class="menu-link">
+                    <div data-i18n="company">Company</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="/semester" class="menu-link">
+                    <div data-i18n="semester">Semester</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="/category" class="menu-link">
+                    <div data-i18n="category">Category</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
 
         <!-- Category Settings -->
-        <li class="menu-item">
-            <a href="/category" class="menu-link">
+            @if (!empty($menus))
+                @foreach ($menus as $menu)
+                <li class="menu-item">
+                 <a href="/{{ $menu->name }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chart"></i>
-                <div data-i18n="Analytics">Notes</div>
-            </a>
-        </li>
-        <!-- Category Settings -->
-        <li class="menu-item">
-            <a href="/category" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chart"></i>
-                <div data-i18n="Analytics">Syllabus</div>
-            </a>
-        </li>
-        <!-- Category Settings -->
-        <li class="menu-item">
-            <a href="/category" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chart"></i>
-                <div data-i18n="Analytics">Question Banks</div>
-            </a>
-        </li>
-        <!-- Category Settings -->
-        <li class="menu-item">
-            <a href="/category" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-chart"></i>
-                <div data-i18n="Analytics">Books</div>
-            </a>
-        </li>
-        <!-- Post settings -->
-        <li class="menu-item">
-            <a href="/post" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Analytics">Post</div>
-            </a>
-        </li>
+                <div data-i18n="Analytics">{{ $menu->name }}</div>
+                 </a>
+                </li>
+                @endforeach
+            @endif
+
     </ul>
 </aside>
