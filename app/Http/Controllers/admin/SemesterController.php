@@ -36,7 +36,7 @@ class SemesterController extends Controller
 
         $request->validate(
             [
-                "title" => "required|unique:semesters,Title",
+                "title" => "required|unique:semesters,title",
             ],
             [
                 "title.required" => "Title is required field",
@@ -79,7 +79,7 @@ class SemesterController extends Controller
     {
        $request->validate(
             [
-                "title" => "required|unique:semesters,Title",
+                "title" => "required|unique:semesters,title",
             ],
             [
                 "title.required" => "Title is required field",

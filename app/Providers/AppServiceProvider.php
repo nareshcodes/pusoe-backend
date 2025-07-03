@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\semester;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -23,7 +24,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $menus = Category::all();
+        $semesters = semester::all();
         View::share("menus",$menus);
+        View::share("semesters",$semesters);
         Paginator::useBootstrapFive();
     }
 }

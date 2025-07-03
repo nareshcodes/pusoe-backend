@@ -20,7 +20,7 @@
                         @foreach ($semesters as $semester)
                             <tr>
 
-                                <td>{{ $semester->Title }}</td>
+                                <td>{{ $semester->title }}</td>
                                 <td><img height="60" width="50" src={{ asset($semester->photo) }}></td>
                                 <td>
                                     <form method="POST" action="/semester/{{ $semester->id }}">

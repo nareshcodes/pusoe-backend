@@ -93,7 +93,7 @@
             @if (!empty($menus))
                 @foreach ($menus as $menu)
                 <li class="menu-item">
-                 <a href="/{{ $menu->name }}" class="menu-link">
+                 <a href="/{{Str::lower ($menu->name) }}" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chart"></i>
                 <div data-i18n="Analytics">{{ $menu->name }}</div>
                  </a>

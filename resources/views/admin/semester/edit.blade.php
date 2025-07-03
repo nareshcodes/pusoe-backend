@@ -23,7 +23,7 @@
                                             class="bx bx-buildings"></i></span>
                                     <input type="text" id="basic-icon-default-semester" class="form-control"
                                         placeholder="Enter semester Name" aria-label="semester"
-                                        aria-describedby="basic-icon-default-semester2" name="title" value="{{ $semester->Title }}" />
+                                        aria-describedby="basic-icon-default-semester2" name="title" value="{{ $semester->title }}" />
 
                                 </div>
                                 <div class="span text-danger">

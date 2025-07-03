@@ -1,7 +1,7 @@
 @extends('admin.home')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">categories</span>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">category</span>
                 <a href="/category/create"><button class="btn btn-primary float-end">Create</button></a>
         </h4>
         <div class="row mb-5">
