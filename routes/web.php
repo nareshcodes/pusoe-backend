@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\admin\CompanyController;
+use App\Http\Controllers\admin\QuestionsController;
 use App\Http\Controllers\admin\SemesterController;
 use App\Http\Controllers\admin\SyllabusController;
 use App\Models\Category;
@@ -31,3 +32,4 @@ require __DIR__ . '/auth.php';
     Route::resource("/semester",SemesterController::class);
     Route::resource("/category",CategoryController::class);
     Route::resource("/syllabus",SyllabusController::class);
+    Route::resource("/questions",QuestionsController::class);
