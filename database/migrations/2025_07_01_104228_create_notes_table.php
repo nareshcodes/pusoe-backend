@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->string("title")->unique();
+            $table->string("slug");
+            $table->foreignId("semester_id")->constrained()->onUpdate("cascade");
+            $table->foreignId("category_id")->constrained()->onUpdate("cascade");
+            $table->string("photo")->nullable();
+            $table->string("document");
             $table->timestamps();
         });
     }
