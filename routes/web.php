@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\admin\BooksController;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\admin\CompanyController;
+use App\Http\Controllers\admin\NotesController;
 use App\Http\Controllers\admin\QuestionsController;
 use App\Http\Controllers\admin\SemesterController;
 use App\Http\Controllers\admin\SyllabusController;
@@ -33,3 +35,5 @@ require __DIR__ . '/auth.php';
     Route::resource("/category",CategoryController::class);
     Route::resource("/syllabus",SyllabusController::class);
     Route::resource("/questions",QuestionsController::class);
+    Route::resource("/notes",NotesController::class);
+    Route::resource("/books",BooksController::class);

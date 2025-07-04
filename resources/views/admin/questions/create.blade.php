@@ -49,8 +49,8 @@
                       {{--===================== categoru================== --}}
                       <div class="mb-3">
                         <label for="defaultSelect" class="form-label">Category</label>
-                        <select id="defaultSelect" class="form-select" name="category_id">
-                            <option>Select Category</option>
+                        <select id="defaultSelect" class="form-select" name="category_id" required>
+                            <option value="">Select Category</option>
                           @foreach ($menus as $cat)
                           <option value={{ $cat->id }} {{ $cat->name=="Questions"?"selected":"" }}>{{ $cat->name }}</option>
                           @endforeach

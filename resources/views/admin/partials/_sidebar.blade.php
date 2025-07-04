@@ -90,16 +90,30 @@
             </li>
 
         <!-- Category Settings -->
-            @if (!empty($menus))
-                @foreach ($menus as $menu)
                 <li class="menu-item">
-                 <a href="/{{Str::lower ($menu->name) }}" class="menu-link">
+                 <a href="/syllabus" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-chart"></i>
-                <div data-i18n="Analytics">{{ $menu->name }}</div>
+                <div data-i18n="Analytics">Syllabus</div>
                  </a>
                 </li>
-                @endforeach
-            @endif
+                <li class="menu-item">
+                 <a href="/notes" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chart"></i>
+                <div data-i18n="Analytics">Notes</div>
+                 </a>
+                </li>
+                 <li class="menu-item">
+                 <a href="/books" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chart"></i>
+                <div data-i18n="Analytics">Books</div>
+                 </a>
+                </li>
+                 <li class="menu-item">
+                 <a href="/questions" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chart"></i>
+                <div data-i18n="Analytics">Questions</div>
+                 </a>
+                </li>
 
     </ul>
 </aside>

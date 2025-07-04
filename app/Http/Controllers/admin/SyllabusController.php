@@ -34,11 +34,13 @@ class SyllabusController extends Controller
             [
                 "title" => "required|unique:syllabi,Title",
                 "semester_id" => "required",
+                "category_id" => "required",
                 "document"=> "required"
             ],
             [
                 "title.required" => "Title is required field",
                 "semester_id.required" => "Select Semester",
+                "category_id.required" => "Select Category",
                 "unique"=> "Syllabus Already exists.",
                 "document.required"=> "Document is required"
         ],
