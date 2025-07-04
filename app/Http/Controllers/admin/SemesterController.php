@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use Illuminate\Database\QueryException;
 use App\Http\Controllers\Controller;
 use App\Models\semester;
@@ -40,8 +41,8 @@ class SemesterController extends Controller
             ],
             [
                 "title.required" => "Title is required field",
-                "unique"=> "Semester Already exists."
-        ],
+                "unique" => "Semester Already exists."
+            ],
         );
         $semester = new semester();
         $semester->title = Str::title($request->title);
@@ -77,17 +78,28 @@ class SemesterController extends Controller
      */
     public function update(Request $request, string $id)
     {
-       $request->validate(
+        $request->validate(
             [
-                "title" => "required|unique:semesters,title",
+                "title" => "required",
             ],
             [
                 "title.required" => "Title is required field",
-                "unique"=> "Semester Already exists."
-        ],
+
+            ],
         );
-        $semester = semester::find($id);
-        $semester->title = Str::title($request->title);
+        try {
+            $semester = semester::find($id);
+            $semester->title = Str::title($request->title);
+
+            $semester->update();
+            toast('Semester has been updated successfully!', 'success')->position('bottom-end');
+        } catch (\illuminate\Database\QueryException $e) {
+            $errorcode = $e->errorInfo[1];
+            if ($errorcode == 1062) {
+                toast('Operation failed. Semester Already exists!', 'warning')->position('bottom-end');
+                return back();
+            }
+        };
         if ($request->hasfile("photo")) {
             $file = $request->photo;
             $oldfile =  $semester->photo;
@@ -99,8 +111,6 @@ class SemesterController extends Controller
             $semester->photo = ("images/semester/$newfile");
         }
         $semester->update();
-        toast('Semester has been updated successfully!','success')->position('bottom-end');
-
         return redirect('/semester');
     }
 
@@ -109,8 +119,17 @@ class SemesterController extends Controller
      */
     public function destroy(string $id)
     {
-        $semester = semester::find($id);
-        $semester->delete();
+        try {
+            $semester = semester::find($id);
+            $semester->delete();
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorcode = $e->errorInfo[1];
+            if ($errorcode == 1451) {
+
+                toast('Semester cannot be deleted!', 'warning')->position('bottom-end');
+                return back();
+            }
+        };
         $oldfile =  $semester->photo;
         if (File::exists(public_path($oldfile))) {
             File::delete(public_path($oldfile));
