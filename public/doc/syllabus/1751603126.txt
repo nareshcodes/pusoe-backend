@@ -1,0 +1,162 @@
+
+1. What is noise? Describe different types of noise encountered in communication system.
+2. What do you mean by modulation? Why it is needed?
+3. Explain any one method for the generation of DSB-AM signal. 5 What is envelope detector? Explain working of envelope detector.5 An AM voltage 4.is represented by the V-5[1+0.6Cos(6280t) Sin(2x104) Volts. What are minimum & expression maximum amplitude of AM wave? What frequency components are contained in the modulated wave & what is amplitude of each component?
+5. Point out the major merits of SSB-SC signal over conventional AM signal.
+6. the modulation index is 60. What is the modulation index
+7. When the modulating frequency in an FM system is 400Hz & the modulating voltage is 2.4V, Calculate the maximum deviation. when modulating frequency is reduced to 250 Hz & the modulating voltage is simultaneously raised to 3.2V.
+8. Explain about detection method fo FM using PLL.
+9. Define Carson's rule & its special cases.
+10. What are Armstrong method of generation of FM.
+11. What do you mean by compandinig? Why companding is done in PCM system? Explain PCM system in detail with this reference.
+11. Explain about ASK transmission and reception system.
+12. Explam FDM technique in telephony.
+13. list out the advantages of optical fibres cables.
+14. Describe cellular mobile communication based on GSM system
+architecture.
+15. Describe NRZ,RZ & Manchester line coding system with
+examples.
+16. Modulation index for AM
+17. Block diagram of Analog communication system
+18. Stereo FM transmission
+19. Define communication process. Draw and explain the basic blocks of Analog communication system.
+20. Define noise. Explain about various types of noise encountered in communication system.
+21. Explain the synchronous detection method for the demodulation of DSB-AM signal.
+22. An AM transmitter radiates 10 KW of power when the carrier is unmodulated and 12.65 KW when the carrier is sinusoidally modulated. Find the modulation index, percent modulation. Now if another sinewave corresponding to 40% modulation is transmitted simultaneously, then calculate the total radiated power.
+23. Explain Armstrong method for the generation of FM signal. 
+24. A single tone FM signal is given by Up(t)=10sin(10t+3sin10'). calculate the carrier and modulating frequencies, modulation index, frequency deviation and power dissipated in 1000 resistor.
+25. Draw and explain PCM system. Compare it with DM system.  
+26. Explain about ASK transmission and reception system. 
+28. Parseval's theorem
+29. PLL
+30. Shannon channel theorem
+31. Need for Modulation
+32. ISI
+33.What do you mean by multiplexing? Explain about FDM with diagram.
+34. State Carlson's rule for FM wave.
+35. Need of modulation
+36. DBS-SC modulation
+37. Optical fiber communication
+38.What is power signal? Prove the Parseval's Theorem for power signal.
+39. Draw block diagram of analog communication system. Explain each block briefly. Define modulation.
+40.A carrier signal c(t)=20cos2x 102 V is amplitude modulated by by a modulating signal m(t)=6cos2x108 V. Find modulation index, percent of modulation, required bandwidth and transmission power of the resultant AM wave. 2.5+2.5+2.5+2.5. 
+41. Explain about methods of generation of FM signal with block diagram.
+42. An FM signal is represented by the following:
+    S(t)-10Cos(2Xx10t+5 Sin2xx10). Calculate:
+   (i) Carrier frequency
+   (ii) Message frequency
+   (iii) Production index
+   (iv) Frequency deviation
+    (v) Power dissipated in 1000 resistor
+43. Explain about PCM system with block diagram.
+44. What do you mean by multiplexing? Explain about FDM with diagram.
+45. State Carlson's rule for FM wave.
+46. Need of modulation
+47. DBS-SC modulation
+48. Optical fiber communication
+49. What is energy signal and power signal? State and prove the energy Parseval's theorem.
+50. A carrier signal c(t)=10cos 2x x103t V is amplitude modulated by by a modulating signal m(t)=6cos2x107t v. Find modulation index, percent of modulation, required bandwidth and transmission power of the resultant AM wave.
+51. What are need for modulation? Explain briefly.
+52. Derive the expression for time domain representation of single tone modulated FM.
+53. A signal tone FM is represented by the voltage equation. 2+2+2 v(t)= 12 cos (6×108t+5 sin 1250t).
+Determine the following:
+    (i) carrier frequency (ii) modulating frequency
+    (iii) modulation index
+54. Define ASK, PSK, FSK. Explain each briefly.
+55. State Carlson's rule for FM wave.
+56. Draw the general block diagram of a digital communication. system and explain each block in detail.
+57. Explain pulse code modulation.
+58. State and prove Nyquist sampling theorem.
+59. Explain about Shannon's channel capacity theorem.
+60. What do you mean by multiplexing? Explain about TDM and FDM.
+61. Explain single side band modulation with necessary diagram.
+62. What do you mean by ISI?
+63. Optical fiber communication
+64. Vestigeal side band modulation
+65. With the help of diagram explain about GSM architecture.
+
+66.Describe the general communication system with the help of block diagram.
+67. Derive the Parseval's theorem for energy signal.
+68. Explain the various types of noise that occur in communication
+system.
+69. Why modulation is required for signal transmission?
+70. Explain the detection procedure for DSB-SC.
+71. Describe how FM wave can be generated from PM wave and vice versa.
+72. Define the Carson's role for FM bandwidth. An FM wave modulated to a depth of 8, generates a BW of 180KHz. Find the frequency deviation.
+73. How does PPL work? Explain with necessary figures.
+74. A carrier signal c(t) 10 cos2xx10°t is amplitude modulation by modulating signal m(t) 5 cos2x101t. Find modulation index, percentage modulation, required bandwidth and transmission power of resultant AM wave.
+75. Discuss the advantages and and disadvantages of digital communication system over analog communication system.
+76. State and explain the sampling theorem. Describe aliasing
+effect.
+77. Explain TFhierarchy in digital telephony in detail.
+78. Explain about GSM architecture with necessary diagram
+79. What are the advantages of optical fiber communication? Explain the detail about PCM.
+80. Define information theory and explain different types of line coding schemes.
+81. Threshold effect in AM
+82. FDM
+
+83. Draw the basic block diagram of an analog communication system and explain the function of each block.
+84. Define electrical noise. What are its types? Explain.
+85. With a neat diagram, explain the generation method for DSB-SC signals using Balance Modulator.
+86. An amplitude modulated signal is represented as: V(t)= 10(1+0.4 cos 2яx103t) сos 2×10°t. Identify what type of amplitude modulation it is, and find: (i) modulating and carrier frequencies, (ii) modulation index, (iii) required bandwidth, (iv) total power to transmit.
+87. Show that PLL can be used as FM demodulator with neat block diagram. Also point out its important merits.
+88. A single tone FM is represented by the voltage equation as: V(t)= 12 cos (6×108t+5 sin 1250 t). Determine: (i) carrier and modulating frequencies, (ii) modulation index, (iii) maximum deviation and carrier swing, (iv) power dissipation by FM in 150 resistor.
+89. What is modulation? Why is it needed? Describe any one method of demodulation of AM signals.
+90. State and explain Shannon's channel capacity theorem.
+91. Explain about PSK transmitter and receiver with necessary
+diagram.
+92. What is multiplexing? Explain the basic principle of frequency division multiplexing.
+93. Draw the neat block diagram of optical fiber communication system and explain each block in brief.
+94. Write short notes on any FOUR:
+95. Multiple Access Techniques
+96. PCM
+97. FM vs AM
+98. Parseval's theorem
+99. Communication system in Nepal: Present Scenario
+
+100. Draw the general block diagram for digital communication system and explain each block in brief.
+State and explain Parserval's Theorem for power signals
+101. Fxplain the need for modulation
+102. Discuss the general block diagram of communication system in detail.
+103. Explain the need of modulation
+104. How can we produce DSB-AM signal? Explain any one method. 
+105. An AM broadcast radio transfer radiates 10kW of power if the modulation percentage is. 60. Calculate how much of this is the carrier power. at
+108. Explain square law detection method for DSB-AM signals. 6. by Jae total power content of an AM signal is 1000W. Determine he power being transmitted at the carrier frequency and at each c'the sidebands when the percent modulation is 100%. 
+108. Compare NBFM and WBFM.
+109. Explain with necessary diagram about Armstrong method for the generation of FM signal.
+
+110. The maximum deviation allowed in an FM broadcast system is KHZ. If the modulating signal is a single-tone sinusoid of 8 AKIZ, determine the bandwidth of FM signal. What will be the bandwidth when modulating signal amplitude is doubled?
+111. Explain limiter-discriminator method for demodulation of FM Signal.
+112. What is Carlson's rule? Derive the bandwidth for FM wave. Differentiate NBFM and WBFM.
+113. A signal tone FM is represented as: V(t)=12cos(6x10t+5sin 1250t) v
+    Determine:
+    (i) Carrier frequency 
+    (ii) Modulating frequency(fm)°
+    (ii) The modulating index (m) (iv) Maximum deviation
+114. State Nyquist sampling Theorem.
+115. Explain the basic principle of Analog-to-Digital conversion.
+116. How quantization error is introduced in PCM system? Explain. 5
+117. Define information and entropy.
+118. (Coherent binary Ask)
+119. Compare ASK, FSK and PSK.
+120. Power dissipation by FM in 100 resistor (P) = ? 
+121. With the concept of companding, explain the basic principles of PCM system with necessary block diagram..
+122. What is multiplexing? Explain FDM in Telephony hierarchy
+123. Point out some special features of TDMA.
+124. What are line coding schemes for Baseband communication system? Explain with necessary figures and examples.
+125. Explain the basic principle of FDM System
+126. What are the advantages of optical fiber communication? Explain in detail.
+127. What is Shift Keying? Explain about QPSK transmitter along with the necessary diagram.
+128. Explain the basic structure of mobile communication system. 
+129. Give your view on Information Theory. Also explain about source entropy and information rate.
+130. What are the various forms of noise encountered in communication system? Explain.
+131. Threshold effect in AM
+132. Parseval's Theorem for energy signal
+133. Optical fiber communication system
+134. PAM
+135. Electrical noise and its types.
+136. Types and properties of system 
+137. Communication system in Nepal
+138. Explain about FDM in telephony.
+139. With the help of diagram explain about GSM architecture.
+140. How does PLL works? Explain with necessary figures.
