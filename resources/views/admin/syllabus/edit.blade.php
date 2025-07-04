@@ -1,8 +1,8 @@
-        @extends('admin.home')
+@extends('admin.home')
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">semester/</span> Edit
-            <a href="/semester"><button class="btn btn-primary float-end">Back</button></a>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Syllabus/</span> Edit
+            <a href="/syllabus"><button class="btn btn-primary float-end">Back</button></a>
         </h4>
 
         <!-- Basic Layout -->
@@ -10,20 +10,20 @@
             <div class="col-xl-8 mx-auto">
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Edit semester Details</h5>
+                        <h5 class="mb-0">Update Syllabus</h5>
                     </div>
                     <div class="card-body">
-                        <form action ="/semester/{{ $semester->id }}" method="post" enctype="multipart/form-data">
+                        <form action ="/syllabus/{{ $syllabus->id }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @method("Put")
+                            @method("put")
                             <div class="mb-3">
-                                <label class="form-label" for="basic-icon-default-semester">semester</label>
+                                <label class="form-label" for="basic-icon-default-syllabus">Syllabus</label>
                                 <div class="input-group input-group-merge">
-                                    <span id="basic-icon-default-semester2" class="input-group-text"><i
+                                    <span id="basic-icon-default-syllabus2" class="input-group-text"><i
                                             class="bx bx-buildings"></i></span>
-                                    <input type="text" id="basic-icon-default-semester" class="form-control"
-                                        placeholder="Enter semester Name" aria-label="semester"
-                                        aria-describedby="basic-icon-default-semester2" name="title" value="{{ $semester->Title }}" />
+                                    <input type="text" id="basic-icon-default-syllabus" class="form-control"
+                                        placeholder="Enter syllabus Name" aria-label="syllabus"
+                                        aria-describedby="basic-icon-default-syllabus2" name="title" value="{{ $syllabus->title }}"/>
 
                                 </div>
                                 <div class="span text-danger">
@@ -32,16 +32,62 @@
                                     @enderror
                                 </div>
                             </div>
+
+                           <div class="mb-3">
+                        <label for="semester_id" class="form-label">Select Semester</label>
+                        <select id="semester_id" class="form-select" name="semester_id" required>
+                             <option value="" selected>Select Semester</option>
+                          @foreach ($semesters as $sem)
+                          <option value={{ $sem->id }} {{$sem->title == $syllabus->semester->title?"selected":"" }}>{{ $sem->title }}</option>
+                          @endforeach
+
+                        </select>
+                        <div class="span text-danger">
+                                    @error('semester_id')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                      </div>
+                      {{--===================== categoru================== --}}
+                      <div class="mb-3">
+                        <label for="defaultSelect" class="form-label">Category</label>
+                        <select id="defaultSelect" class="form-select" name="category_id">
+                            <option>Select Category</option>
+                          @foreach ($menus as $cat)
+                          <option value={{ $cat->id }} {{ $cat->name=="Syllabus"?"selected":"" }}>{{ $cat->name }}</option>
+                          @endforeach
+                        </select>
+                        <div class="span text-danger">
+                                    @error('category_id')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                      </div>
                             <div class="mb-3">
-                                <label class="form-label" for="basic-icon-default-logo">Photo</label>
+                                <label class="form-label" for="basic-icon-default-image">Featured Image</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-image'></i></span>
-                                    <input type="file" id="basic-icon-default-logo" class="form-control"
-                                        placeholder="Upload logo" aria-label="log"
-                                        aria-describedby="basic-icon-default-logo" name="logo" value="{{$semester->photo}}" />
+                                    <input type="file" accept="image/*" id="basic-icon-default-image" class="form-control"
+                                        placeholder="Upload image" aria-label="photo"
+                                        aria-describedby="basic-icon-default-image" name="photo" />
 
                                 </div>
 
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="basic-icon-default-document">Upload Document</label>
+                                <div class="input-group input-group-merge">
+                                    <span class="input-group-text"><i class='bx bx-document'></i></span>
+                                    <input type="file" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"  id="basic-icon-default-document" class="form-control"
+                                        placeholder="Upload Document" aria-label="document"
+                                        aria-describedby="basic-icon-default-document" name="document" />
+
+                                </div>
+<div class="span text-danger">
+                                    @error('document')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Save</button>
                         </form>

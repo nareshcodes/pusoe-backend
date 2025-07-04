@@ -110,11 +110,11 @@ class SemesterController extends Controller
     public function destroy(string $id)
     {
         $semester = semester::find($id);
+        $semester->delete();
         $oldfile =  $semester->photo;
         if (File::exists(public_path($oldfile))) {
             File::delete(public_path($oldfile));
         }
-        $semester->delete();
         return redirect()->back();
     }
 }

@@ -77,7 +77,8 @@ class SyllabusController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $syllabus = syllabus::find($id);
+        return view("admin.syllabus.edit",compact("syllabus"));
     }
 
     /**
@@ -85,7 +86,46 @@ class SyllabusController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                "title" => "required|unique:syllabi,Title",
+                "semester_id" => "required",
+                "document"=> "required"
+            ],
+            [
+                "title.required" => "Title is required field",
+                "semester_id.required" => "Select Semester",
+                "unique"=> "Syllabus Already exists.",
+                "document.required"=> "Document is required"
+        ],
+        );
+        $syllabus = syllabus::find($id);
+        $syllabus->title = Str::title($request->title);
+        $syllabus->slug = Str::slug($request->title,"-");
+        $syllabus->semester_id = $request->semester_id;
+        $syllabus->category_id = $request->category_id;
+        if ($request->hasfile("photo")) {
+            $file = $request->photo;
+            $oldfile =  $syllabus->photo;
+            if (File::exists(public_path($oldfile))) {
+                File::delete(public_path($oldfile));
+            }
+            $newfile = time() . "." . $file->GetClientOriginalExtension();
+            $file->move("images/syllabus", $newfile);
+            $syllabus->photo = ("images/syllabus/$newfile");
+        }
+        if ($request->hasfile("document")) {
+            $doc = $request->document;
+            $olddoc =  $syllabus->document;
+            if (File::exists(public_path($olddoc))) {
+                File::delete(public_path($olddoc));
+            }
+            $newdoc = time() . "." . $doc->GetClientOriginalExtension();
+            $doc->move("doc/syllabus", $newdoc);
+            $syllabus->document = ("doc/syllabus/$newdoc");
+        }
+        $syllabus->update();
+        return redirect("/syllabus");
     }
 
     /**

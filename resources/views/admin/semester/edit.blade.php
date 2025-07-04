@@ -33,12 +33,12 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label" for="basic-icon-default-logo">Photo</label>
+                                <label class="form-label" for="basic-icon-default-photo">Photo</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-image'></i></span>
-                                    <input type="file" id="basic-icon-default-logo" class="form-control"
-                                        placeholder="Upload logo" aria-label="log"
-                                        aria-describedby="basic-icon-default-logo" name="logo" value="{{$semester->photo}}" />
+                                    <input type="file" id="basic-icon-default-photo" class="form-control"
+                                        placeholder="Upload photo" aria-label="photo"
+                                        aria-describedby="basic-icon-default-photo" name="photo" value="{{$semester->photo}}" />
 
                                 </div>
 
