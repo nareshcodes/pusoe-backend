@@ -4,6 +4,10 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Notes as ResourcesNotes;
+use App\Http\Resources\Books as ResourcesBooks;
+use App\Http\Resources\company as ResourcesCompany;
+use App\Models\books;
+use App\Models\company;
 use App\Models\notes;
 use App\Models\semester;
 use Illuminate\Http\Request;
@@ -14,13 +18,14 @@ use function Laravel\Prompts\note;
 class AdminController extends Controller
 {
     public function company(){
-        return response()->json(["company"]);
+        $company=company::first();
+        if(!empty($company)){
+
+        return new ResourcesCompany($company);
+        }
     }
     public function semester(){
         return response()->json(["semester"]);
-    }
-    public function category(){
-        return response()->json(["category"]);
     }
     public function syllabus(){
         return response()->json(["syllabus"]);
@@ -38,6 +43,7 @@ class AdminController extends Controller
             }
     }
     public function books(){
-        return response()->json(["books"]);
+       $books = books::all();
+       return ResourcesBooks::collection($books);
     }
 }

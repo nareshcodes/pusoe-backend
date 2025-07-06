@@ -11,7 +11,6 @@ Route::get('/user', function (Request $request) {
 
     Route::get("/company",[AdminController::class, "company"]);
     Route::get("/semester",[AdminController::class, "semester"]);
-    Route::get("/category",[AdminController::class, "category"]);
     Route::get("/syllabus",[AdminController::class,"syllabus"]);
     Route::get("/questions",[AdminController::class, "questions"]);
     Route::get("/notes/{semester}",[AdminController::class, "notes"]);
