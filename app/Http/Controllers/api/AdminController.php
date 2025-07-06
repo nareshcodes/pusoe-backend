@@ -6,14 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Notes as ResourcesNotes;
 use App\Http\Resources\Books as ResourcesBooks;
 use App\Http\Resources\company as ResourcesCompany;
+use App\Http\Resources\question as ResourcesQuestion;
+use App\Http\Resources\semester as ResourcesSemester;
+use App\Http\Resources\syllabus as ResourcesSyllabus;
 use App\Models\books;
 use App\Models\company;
 use App\Models\notes;
+use App\Models\questions;
 use App\Models\semester;
-use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\Foreach_;
-
-use function Laravel\Prompts\note;
+use App\Models\syllabus;
 
 class AdminController extends Controller
 {
@@ -25,13 +26,24 @@ class AdminController extends Controller
         }
     }
     public function semester(){
-        return response()->json(["semester"]);
+        $semesters = semester::all();
+        if(!empty($semester)){
+
+        return ResourcesSemester::collection($semesters);
+        }
     }
     public function syllabus(){
-        return response()->json(["syllabus"]);
+        $syllabus = syllabus::all();
+        if(!empty($syllabus)){
+        return ResourcesSyllabus::collection($syllabus);
+        }
     }
     public function questions(){
-        return response()->json(["questions"]);
+         $questions = questions::all();
+        if(!empty($questions)){
+
+        return ResourcesQuestion::collection($questions);
+        }
     }
     public function notes(string $request)
     {
@@ -44,6 +56,8 @@ class AdminController extends Controller
     }
     public function books(){
        $books = books::all();
-       return ResourcesBooks::collection($books);
+       if(!empty($books)){
+        return ResourcesBooks::collection($books);
+       }
     }
 }

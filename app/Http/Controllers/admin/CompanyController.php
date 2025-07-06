@@ -55,6 +55,9 @@ class CompanyController extends Controller
             $company->website = $request->website;
             if ($request->hasfile("logo")) {
                 $file = $request->logo;
+                    $oldfile =  $company->logo;
+            if(File::exists(public_path($oldfile))){
+            File::delete(public_path($oldfile));}
                 $newfile = time() . "." . $file->GetClientOriginalExtension();
                 $file->move("images/company", $newfile);
                 $company->logo = ("images/company/$newfile");
