@@ -27,7 +27,7 @@ class AdminController extends Controller
     }
     public function semester(){
         $semesters = semester::all();
-        if(!empty($semester)){
+        if(!empty($semesters)){
 
         return ResourcesSemester::collection($semesters);
         }
