@@ -15,3 +15,4 @@ Route::get('/user', function (Request $request) {
     Route::get("/questions",[AdminController::class, "questions"]);
     Route::get("/notes/{semester}",[AdminController::class, "notes"]);
     Route::get("/books",[AdminController::class, "books"]);
+    Route::get("/featured",[AdminController::class, "featured"]);

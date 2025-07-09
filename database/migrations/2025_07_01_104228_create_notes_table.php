@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string("slug");
             $table->foreignId("semester_id")->constrained()->onUpdate("cascade");
             $table->foreignId("category_id")->constrained()->onUpdate("cascade");
+            $table->enum('featured',['active','inactive'])->default('inactive');
             $table->string("photo")->nullable();
             $table->string("document");
             $table->timestamps();

@@ -61,6 +61,19 @@
                                     @enderror
                                 </div>
                       </div>
+                        {{--===================== featured================== --}}
+                      <div class="mb-3">
+                        <label for="defaultSelect" class="form-label">Featured</label>
+                        <select id="defaultSelect" class="form-select" name="featured" required>
+                            <option value="inactive" selected>Inactive</option>
+                            <option value="active">Active</option>
+                        </select>
+                        <div class="span text-danger">
+                                    @error('featured')
+                                        {{ $message }}
+                                    @enderror
+                                </div>
+                      </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-icon-default-image">Featured Image</label>
                                 <div class="input-group input-group-merge">

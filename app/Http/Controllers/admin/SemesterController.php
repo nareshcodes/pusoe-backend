@@ -17,7 +17,7 @@ class SemesterController extends Controller
      */
     public function index()
     {
-        $semesters = semester::Orderby("id", "asc")->get();
+        $semesters = semester::orderBy("id", "asc")->get();
         return view("admin.semester.index", compact("semesters"));
     }
 

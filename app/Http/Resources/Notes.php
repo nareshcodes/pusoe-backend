@@ -21,6 +21,7 @@ class Notes extends JsonResource
             "slug"=>$this->slug,
             "semester"=>$this->semester->title,
             "category"=>$this->category->name,
+            "featured"=>$this->featured,
             "featured_image"=>asset($this->photo),
             "document"=>asset($this->document)
         ];

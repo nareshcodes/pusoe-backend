@@ -18,46 +18,60 @@ use App\Models\syllabus;
 
 class AdminController extends Controller
 {
-    public function company(){
-        $company=company::first();
-        if(!empty($company)){
+    public function company()
+    {
+        $company = company::first();
+        if (!empty($company)) {
 
-        return new ResourcesCompany($company);
+            return new ResourcesCompany($company);
         }
     }
-    public function semester(){
+    public function semester()
+    {
         $semesters = semester::all();
-        if(!empty($semesters)){
+        if (!empty($semesters)) {
 
-        return ResourcesSemester::collection($semesters);
+            return ResourcesSemester::collection($semesters);
         }
     }
-    public function syllabus(){
+    public function syllabus()
+    {
         $syllabus = syllabus::all();
-        if(!empty($syllabus)){
-        return ResourcesSyllabus::collection($syllabus);
+        if (!empty($syllabus)) {
+            return ResourcesSyllabus::collection($syllabus);
         }
     }
-    public function questions(){
-         $questions = questions::all();
-        if(!empty($questions)){
+    public function questions()
+    {
+        $questions = questions::all();
+        if (!empty($questions)) {
 
-        return ResourcesQuestion::collection($questions);
+            return ResourcesQuestion::collection($questions);
         }
     }
     public function notes(string $request)
     {
-            $sem = semester::where('title','Like','%'.$request.'%')->first();
+        $sem = semester::where('title', 'Like', '%' . $request . '%')->first();
 
-            if(!empty($sem->id)){
-                $notes = notes::where('semester_id',$sem->id)->get();
-                return ResourcesNotes::collection($notes);
-            }
+        if (!empty($sem->id)) {
+            $notes = notes::where('semester_id', $sem->id)->get();
+            return ResourcesNotes::collection($notes);
+        }
     }
-    public function books(){
-       $books = books::all();
-       if(!empty($books)){
-        return ResourcesBooks::collection($books);
-       }
+
+    public function featured()
+    {
+        $notes = notes::orderBy('id','desc')->where('featured', 'active')->take(8)->get();
+         if (!empty($notes)) {
+        return ResourcesNotes::collection($notes);
+         }
+    }
+
+    public function books()
+    {
+        $books = books::all();
+        if (!empty($books)) {
+            return ResourcesBooks::collection($books);
+        }
     }
 }

@@ -12,6 +12,7 @@
                         <tr>
                             <th>Notes</th>
                             <th>Semester</th>
+                            <th>Featured</th>
                             <th>Image</th>
                              <th>Download</th>
                              <th>Actions</th>
@@ -23,6 +24,7 @@
 
                                 <td>{{ $note->title }}</td>
                                 <td>{{ $note->semester->title }}</td>
+                                <td>{{ $note->featured}}</td>
                                 <td><img height="60" width="50" src={{ asset($note->photo) }}></td>
                                  <td><a href={{ asset($note->document) }} class="text-decoration-none" > {{ $note->document }}</a></td>
 

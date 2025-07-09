@@ -51,6 +51,7 @@ class NotesController extends Controller
         $note->slug = Str::slug($request->title,"-");
         $note->semester_id = $request->semester_id;
         $note->category_id = $request->category_id;
+        $note->featured = $request->featured;
         if ($request->hasfile("photo")) {
             $file = $request->photo;
             $newfile = time() . "." . $file->GetClientOriginalExtension();
@@ -104,6 +105,7 @@ class NotesController extends Controller
         $note->slug = Str::slug($request->title,"-");
         $note->semester_id = $request->semester_id;
         $note->category_id = $request->category_id;
+        $note->featured = $request->featured;
         if ($request->hasfile("document")) {
             $doc = $request->document;
             $olddoc =  $note->document;
