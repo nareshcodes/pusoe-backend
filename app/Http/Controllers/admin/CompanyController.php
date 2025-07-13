@@ -7,6 +7,7 @@ use App\Models\company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+
 class CompanyController extends Controller
 {
     /**
@@ -55,13 +56,18 @@ class CompanyController extends Controller
             $company->website = $request->website;
             if ($request->hasfile("logo")) {
                 $file = $request->logo;
-                    $oldfile =  $company->logo;
-            if(File::exists(public_path($oldfile))){
-            File::delete(public_path($oldfile));}
+                $oldfile =  $company->logo;
+                if ($oldfile != 'images/no-logo.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
                 $newfile = time() . "." . $file->GetClientOriginalExtension();
                 $file->move("images/company", $newfile);
                 $company->logo = ("images/company/$newfile");
-            }
+            }else {
+            $company->logo = ("images/no-logo.png");
+        }
             $company->save();
             return redirect('/company');
         } else {
@@ -114,8 +120,11 @@ class CompanyController extends Controller
         if ($request->hasfile("logo")) {
             $file = $request->logo;
             $oldfile =  $company->logo;
-            if(File::exists(public_path($oldfile))){
-            File::delete(public_path($oldfile));}
+            if ($oldfile != 'images/no-logo.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/company", $newfile);
             $company->logo = ("images/company/$newfile");

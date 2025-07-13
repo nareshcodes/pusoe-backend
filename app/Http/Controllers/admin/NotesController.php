@@ -57,6 +57,8 @@ class NotesController extends Controller
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/note", $newfile);
             $note->photo = ("images/note/$newfile");
+        }else {
+            $note->photo = ("images/no-image.png");
         }
         if ($request->hasfile("document")) {
             $doc = $request->document;
@@ -128,8 +130,10 @@ class NotesController extends Controller
     if ($request->hasfile("photo")) {
             $file = $request->photo;
             $oldfile =  $note->photo;
-            if (File::exists(public_path($oldfile))) {
-                File::delete(public_path($oldfile));
+           if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
             }
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/note", $newfile);
@@ -147,9 +151,11 @@ class NotesController extends Controller
         $note= notes::find($id);
          $oldfile =  $note->photo;
          $olddoc =  $note->document;
-        if (File::exists(public_path($oldfile))) {
-            File::delete(public_path($oldfile));
-        }
+        if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
         if (File::exists(public_path($olddoc))) {
             File::delete(public_path($olddoc));
         }

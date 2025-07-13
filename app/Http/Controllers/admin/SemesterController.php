@@ -51,6 +51,8 @@ class SemesterController extends Controller
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/semester", $newfile);
             $semester->photo = ("images/semester/$newfile");
+        } else {
+            $semester->photo = ("images/no-image.png");
         }
         $semester->save();
         return back();
@@ -103,8 +105,10 @@ class SemesterController extends Controller
         if ($request->hasfile("photo")) {
             $file = $request->photo;
             $oldfile =  $semester->photo;
-            if (File::exists(public_path($oldfile))) {
-                File::delete(public_path($oldfile));
+             if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
             }
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/semester", $newfile);
@@ -131,9 +135,11 @@ class SemesterController extends Controller
             }
         };
         $oldfile =  $semester->photo;
-        if (File::exists(public_path($oldfile))) {
-            File::delete(public_path($oldfile));
-        }
+         if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
         return redirect()->back();
     }
 }

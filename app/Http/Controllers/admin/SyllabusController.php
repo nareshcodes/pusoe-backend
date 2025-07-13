@@ -55,6 +55,8 @@ class SyllabusController extends Controller
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/syllabus", $newfile);
             $syllabus->photo = ("images/syllabus/$newfile");
+        } else {
+            $syllabus->photo = ("images/no-image.png");
         }
         if ($request->hasfile("document")) {
             $doc = $request->document;
@@ -125,8 +127,10 @@ class SyllabusController extends Controller
     if ($request->hasfile("photo")) {
             $file = $request->photo;
             $oldfile =  $syllabus->photo;
-            if (File::exists(public_path($oldfile))) {
-                File::delete(public_path($oldfile));
+              if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
             }
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/syllabus", $newfile);
@@ -144,9 +148,11 @@ class SyllabusController extends Controller
         $syllabus= Syllabus::find($id);
          $oldfile =  $syllabus->photo;
          $olddoc =  $syllabus->document;
-        if (File::exists(public_path($oldfile))) {
-            File::delete(public_path($oldfile));
-        }
+           if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
         if (File::exists(public_path($olddoc))) {
             File::delete(public_path($olddoc));
         }

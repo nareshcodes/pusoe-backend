@@ -56,6 +56,8 @@ class QuestionsController extends Controller
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/question", $newfile);
             $question->photo = ("images/question/$newfile");
+        }else {
+            $question->photo = ("images/no-image.png");
         }
         if ($request->hasfile("document")) {
             $doc = $request->document;
@@ -126,8 +128,10 @@ class QuestionsController extends Controller
     if ($request->hasfile("photo")) {
             $file = $request->photo;
             $oldfile =  $question->photo;
-            if (File::exists(public_path($oldfile))) {
-                File::delete(public_path($oldfile));
+              if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
             }
             $newfile = time() . "." . $file->GetClientOriginalExtension();
             $file->move("images/question", $newfile);
@@ -145,9 +149,11 @@ class QuestionsController extends Controller
         $question= questions::find($id);
          $oldfile =  $question->photo;
          $olddoc =  $question->document;
-        if (File::exists(public_path($oldfile))) {
-            File::delete(public_path($oldfile));
-        }
+         if ($oldfile != 'images/no-image.png') {
+                if (File::exists(public_path($oldfile))) {
+                    File::delete(public_path($oldfile));
+                }
+            }
         if (File::exists(public_path($olddoc))) {
             File::delete(public_path($olddoc));
         }
