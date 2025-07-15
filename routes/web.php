@@ -8,7 +8,6 @@ use App\Http\Controllers\admin\NotesController;
 use App\Http\Controllers\admin\QuestionsController;
 use App\Http\Controllers\admin\SemesterController;
 use App\Http\Controllers\admin\SyllabusController;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::resource("/books",BooksController::class);
 
 });
+
 
 require __DIR__ . '/auth.php';
 
