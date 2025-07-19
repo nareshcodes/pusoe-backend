@@ -78,7 +78,7 @@
                                 <label class="form-label" for="basic-icon-default-document">Upload Document</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-document'></i></span>
-                                    <input type="file" accept=".xlsx,.xls,image/*,.doc, .docx,.ppt, .pptx,.txt,.pdf"  id="basic-icon-default-document" class="form-control"
+                                    <input type="file"  id="basic-icon-default-document" class="form-control"
                                         placeholder="Upload Document" aria-label="document"
                                         aria-describedby="basic-icon-default-document" name="document" />
 

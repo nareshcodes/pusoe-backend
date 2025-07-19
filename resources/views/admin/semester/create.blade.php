@@ -35,7 +35,7 @@
                                 <label class="form-label" for="basic-icon-default-image">Image</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-image'></i></span>
-                                    <input type="file" id="basic-icon-default-image" class="form-control"
+                                    <input type="file" accept="image/*" id="basic-icon-default-image" class="form-control"
                                         placeholder="Upload image" aria-label="log"
                                         aria-describedby="basic-icon-default-image" name="photo" />
 

@@ -36,7 +36,7 @@
                                 <div class="input-group input-group-merge">
                                     <span id="basic-icon-default-address" class="input-group-text"><i
                                             class='bx bxs-map'></i></span>
-                                    <input type="text" class="form-control" id="basic-icon-default-address"
+                                    <input type="text" accept="image/*" class="form-control" id="basic-icon-default-address"
                                         placeholder="Enter company address" aria-label="John Doe"
                                         aria-describedby="basic-icon-default-address" name="address" />
                                 </div>

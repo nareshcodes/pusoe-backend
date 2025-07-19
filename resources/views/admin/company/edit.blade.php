@@ -94,7 +94,7 @@
                                 <label class="form-label" for="basic-icon-default-logo">logo</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-image'></i></span>
-                                    <input type="file" id="basic-icon-default-logo" class="form-control"
+                                    <input type="file" accept="image/*" id="basic-icon-default-logo" class="form-control"
                                         placeholder="Upload logo" aria-label="log"
                                         aria-describedby="basic-icon-default-logo" name="logo" value="{{$company->logo}}" />
 

@@ -36,7 +36,7 @@
                                 <label class="form-label" for="basic-icon-default-photo">Photo</label>
                                 <div class="input-group input-group-merge">
                                     <span class="input-group-text"><i class='bx bx-image'></i></span>
-                                    <input type="file" id="basic-icon-default-photo" class="form-control"
+                                    <input type="file" accept="image/*" id="basic-icon-default-photo" class="form-control"
                                         placeholder="Upload photo" aria-label="photo"
                                         aria-describedby="basic-icon-default-photo" name="photo" value="{{$semester->photo}}" />
 
